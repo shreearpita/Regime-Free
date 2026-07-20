@@ -4,9 +4,9 @@ Most adaptive trading strategies work in two stages: first detect the market reg
 
 **RegimeFree skips the detector entirely.**
 
-Instead, the trading agent continuously self-tunes its temporal horizon — how far back it looks when making decisions — using an algorithm called SDPSA (Simultaneous Deterministic Perturbation Stochastic Approximation). When markets are trending, a longer horizon naturally performs better and gets selected. When markets are choppy, a shorter one does. The agent figures this out on its own, from experience, without ever being told what regime it is in.
+Instead, the trading agent continuously self-tunes its temporal horizon - how far back it looks when making decisions - using an algorithm called SDPSA (Simultaneous Deterministic Perturbation Stochastic Approximation). When markets are trending, a longer horizon naturally performs better and gets selected. When markets are choppy, a shorter one does. The agent figures this out on its own, from experience, without ever being told what regime it is in.
 
-The result is implicit, continuous regime adaptation — not a pipeline, not a classifier, just an agent that adjusts as the world changes.
+The result is implicit, continuous regime adaptation - not a pipeline, not a classifier, just an agent that adjusts as the world changes.
 
 ---
 
@@ -17,7 +17,7 @@ In n-step Temporal Difference (TD) learning, an agent updates its value estimate
 - Small n → myopic, reacts fast, noisy
 - Large n → far-sighted, smoother, slower to adapt
 
-The optimal n is not fixed. It depends on the environment — and in financial markets, the environment shifts. SDPSA finds and tracks the optimal n online, running on a slow timescale while the core TD learning runs fast. No labels. No regime classifier. No switching logic.
+The optimal n is not fixed. It depends on the environment - and in financial markets, the environment shifts. SDPSA finds and tracks the optimal n online, running on a slow timescale while the core TD learning runs fast. No labels. No regime classifier. No switching logic.
 
 ---
 
